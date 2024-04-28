@@ -1,6 +1,4 @@
-import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { tabStyles } from './assets/tabStyle'; 
 
 import Home from './views/home/home';
 import Discovery from './views/discovery/discovery';
@@ -13,20 +11,20 @@ const Tab = createBottomTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator
-      tabBarOptions={{
-        style: tabStyles.tabBar, 
-        labelStyle: tabStyles.label,
-        activeTintColor: tabStyles.activeTintColor,
-        inactiveTintColor: tabStyles.inactiveTintColor,
-      }}
-    >
-      <Tab.Screen
-        name="Home"
-        component={Home}
-        options={{
-          tabBarLabel: 'Início',
-        }}
-      />
+    screenOptions={{
+      //tabBarShowLabel: false,
+      tabBarStyle:{
+        borderTopWidth: 0,
+        marginBottom: 5,
+        marginTop: 5
+        
+      },
+      tabBarLabelStyle:{
+         marginBottom: 5,
+         marginTop: 5
+      }
+    }}>
+      <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Discovery" component={Discovery} />
       <Tab.Screen name="Profile" component={Profile} />
       <Tab.Screen name="About" component={About} />

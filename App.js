@@ -1,10 +1,16 @@
 import React from 'react';
-import { Text, View } from 'react-native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Appearance, StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 
 import MyTabs from './Routes'
 
+const colorScheme = Appearance.getColorScheme();
+
+if (colorScheme === 'dark') {
+  StatusBar.setBarStyle('light-content'); 
+} else {
+  StatusBar.setBarStyle('dark-content');  
+}
 
 export default function App() {
   return (
