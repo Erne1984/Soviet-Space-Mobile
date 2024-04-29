@@ -2,6 +2,49 @@ import React, { useState } from 'react';
 import { Text, View, Image, ScrollView, TouchableOpacity, Linking, Modal, Button } from 'react-native';
 import discoveryStyle from './discoveryStyle';
 
+const booksData = [
+  {
+    url: 'https://www.marxists.org/portugues/lenin/1913/03/tresfont.htm',
+    image: require('../../assets/books/fontes.jpg'),
+    name: 'Três Fontes Comunismo'
+  },
+  {
+    url: 'https://www.marxists.org/portugues/marx/1848/ManifestoDoPartidoComunista/index.htm',
+    image: require('../../assets/books/manifesto.jpg'),
+    name: 'Manifesto Comunista'
+  },
+  {
+    url: 'https://www.marxists.org/portugues/marx/1880/socialismo/index.htm',
+    image: require('../../assets/books/utopicoAoSocialismo.jpg'),
+    name: 'Do Socialismo ao Socialismo Cientifico'
+  },
+  {
+    url: 'https://www.marxists.org/portugues/marx/1845/ideologia-alema-oe/index.htm',
+    image: require('../../assets/books/ideologia.jpg'),
+    name: 'A Ideologia Alemã'
+  },
+  {
+    url: 'https://www.marxists.org/portugues/lenin/1902/quefazer/fazer.pdf',
+    image: require('../../assets/books/imperialismo.webp'),
+    name: 'O Que Fazer?'
+  },
+  {
+    url: 'https://www.marxists.org/portugues/lenin/1917/08/estado-e-a-revolucao.pdf',
+    image: require('../../assets/books/51hovkkHIZL.jpg'),
+    name: 'Estado e Revolução'
+  },
+  {
+    url: 'https://www.marxists.org/portugues/marx/1847/11/principios.htm',
+    image: require('../../assets/books/principios.jpeg'),
+    name: 'Principios Básicos do Comunismo'
+  },
+  {
+    url: 'https://www.marxists.org/portugues/lenin/1916/imperialismo/index.htm',
+    image: require('../../assets/books/imperialismo.jpg'),
+    name: 'Imperialismo, Estágio Superior do Capitalismo'
+  }
+];
+
 function Overlay() {
   return (
     <View style={discoveryStyle.overlay}></View>
@@ -24,97 +67,24 @@ function Discovery() {
 
   return (
     <ScrollView style={discoveryStyle.containerDiscovery}>
-
       <View style={discoveryStyle.boxInput}>
-
         <View style={discoveryStyle.containerBooks}>
-
-          <TouchableOpacity style={[discoveryStyle.rowBooks, { width: '50%' }]} onPress={() => openLink('https://www.marxists.org/portugues/lenin/1913/03/tresfont.htm')}>
-            <Image
-              source={require('../../assets/books/fontes.jpg')}
-              style={{ width: '100%', height: 130 }}
-              resizeMode="center"
-            />
-            <Text style={discoveryStyle.bookName}>Três Fontes Comunismo</Text>
-            <Text style={discoveryStyle.bookRead}>Ler</Text>
-          </TouchableOpacity>
-
-
-          <TouchableOpacity style={[discoveryStyle.rowBooks, { width: '50%' }]} onPress={() => openLink('https://www.marxists.org/portugues/marx/1848/ManifestoDoPartidoComunista/index.htm')}>
-            <Image
-              source={require('../../assets/books/manifesto.jpg')}
-              style={{ width: '100%', height: 130 }}
-              resizeMode="center"
-            />
-            <Text style={discoveryStyle.bookName}>Manifesto Comunista</Text>
-            <Text style={discoveryStyle.bookRead}>Ler</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={[discoveryStyle.rowBooks, { width: '50%' }]} onPress={() => openLink('https://www.marxists.org/portugues/marx/1880/socialismo/index.htm')}>
-            <Image
-              source={require('../../assets/books/utopicoAoSocialismo.jpg')}
-              style={{ width: '100%', height: 130 }}
-              resizeMode="center"
-            />
-            <Text style={discoveryStyle.bookName}>Do Socialismo ao Socialismo Cientifico</Text>
-            <Text style={discoveryStyle.bookRead}>Ler</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={[discoveryStyle.rowBooks, { width: '50%' }]} onPress={() => openLink('https://www.marxists.org/portugues/marx/1845/ideologia-alema-oe/index.htm')}>
-            <Image
-              source={require('../../assets/books/ideologia.jpg')}
-              style={{ width: '100%', height: 130 }}
-              resizeMode="center"
-            />
-            <Text style={discoveryStyle.bookName}>A Ideologia Alemã</Text>
-            <Text style={discoveryStyle.bookRead}>Ler</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={[discoveryStyle.rowBooks, { width: '50%' }]} onPress={() => openLink('https://www.marxists.org/portugues/lenin/1902/quefazer/fazer.pdf')}>
-            <Image
-              source={require('../../assets/books/imperialismo.webp')}
-              style={{ width: '100%', height: 130 }}
-              resizeMode="center"
-            />
-            <Text style={discoveryStyle.bookName}>O Que Fazer?</Text>
-            <Text style={discoveryStyle.bookRead}>Ler</Text>
-          </TouchableOpacity>
-
-
-          <TouchableOpacity style={[discoveryStyle.rowBooks, { width: '50%' }]} onPress={() => openLink('https://www.marxists.org/portugues/lenin/1917/08/estado-e-a-revolucao.pdf')}>
-            <Image
-              source={require('../../assets/books/51hovkkHIZL.jpg')}
-              style={{ width: '100%', height: 130 }}
-              resizeMode="center"
-            />
-            <Text style={discoveryStyle.bookName}>Estado e Revolução</Text>
-            <Text style={discoveryStyle.bookRead}>Ler</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={[discoveryStyle.rowBooks, { width: '50%' }]} onPress={() => openLink('https://www.marxists.org/portugues/marx/1847/11/principios.htm')}>
-            <Image
-              source={require('../../assets/books/principios.jpeg')}
-              style={{ width: '100%', height: 130 }}
-              resizeMode="center"
-            />
-            <Text style={discoveryStyle.bookName}>Principios Básicos do Comunismo</Text>
-            <Text style={discoveryStyle.bookRead}>Ler</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={[discoveryStyle.rowBooks, { width: '50%' }]} onPress={() => openLink('https://www.marxists.org/portugues/lenin/1916/imperialismo/index.htm')}>
-            <Image
-              source={require('../../assets/books/imperialismo.jpg')}
-              style={{ width: '100%', height: 130 }}
-              resizeMode="center"
-            />
-            <Text style={discoveryStyle.bookName}>Imperialismo, Estágio Superior do Capitalismo</Text>
-            <Text style={discoveryStyle.bookRead}>Ler</Text>
-          </TouchableOpacity>
-
+          {booksData.map((book, index) => (
+            <TouchableOpacity
+              key={index}
+              style={[discoveryStyle.rowBooks, { width: '50%' }]}
+              onPress={() => openLink(book.url)}
+            >
+              <Image
+                source={book.image}
+                style={{ width: '100%', height: 130 }}
+                resizeMode="center"
+              />
+              <Text style={discoveryStyle.bookName}>{book.name}</Text>
+              <Text style={discoveryStyle.bookRead}>Ler</Text>
+            </TouchableOpacity>
+          ))}
         </View>
-
-
-
       </View>
 
       <Modal
@@ -137,7 +107,7 @@ function Discovery() {
       </Modal>
       {modalVisible && <Overlay />}
     </ScrollView >
-  )
+  );
 }
 
 export default Discovery;
