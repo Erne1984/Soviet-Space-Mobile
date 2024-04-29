@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
     container: {
         flex: 1,
+        margin: 5,
       },
       illustreContainer: {
         flexDirection: 'row',
@@ -17,6 +18,7 @@ export default StyleSheet.create({
       },
       illustreInfo: {
         flex: 1,
+        textAlign: "justify"
       },
       illustreName: {
         fontSize: 18,

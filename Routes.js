@@ -1,6 +1,6 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
-import React from 'react'; // Certifique-se de importar React
+import React from 'react'; 
 
 import Home from './views/home/home';
 import Discovery from './views/discovery/discovery';
