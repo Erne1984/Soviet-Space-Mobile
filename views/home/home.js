@@ -16,12 +16,12 @@ function Home() {
           <View style={homeStyle.btnContainer}>
             <TouchableOpacity
               style={homeStyle.btnHome}
-              onPress={() => navigation.navigate('Discovery')}>
+              onPress={() => navigation.navigate('Obras')}>
               <Text style={homeStyle.btnHomeColor}>Obras</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={homeStyle.btnHome}
-              onPress={() => navigation.navigate('Profile')}>
+              onPress={() => navigation.navigate('Ilustres')}>
               <Text style={homeStyle.btnHomeColor}>Ilustres</Text>
             </TouchableOpacity>
           </View>
