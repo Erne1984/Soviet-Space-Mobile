@@ -1,10 +1,10 @@
 import { ImageBackground, Text, View, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native'; 
+import { useNavigation } from '@react-navigation/native';
 import backgroundImg from '../../assets/imgs/fundo.jpg';
 import homeStyle from './homeStyle';
 
 function Home() {
-  const navigation = useNavigation(); 
+  const navigation = useNavigation();
 
   return (
     <View style={homeStyle.containerHome}>
@@ -12,11 +12,20 @@ function Home() {
         <View style={homeStyle.overlay}>
           <Text style={homeStyle.title}>Soviet Space ☭</Text>
           <Text style={homeStyle.subTitle}>Explorando o Universo Vermelho de conhecimento</Text>
-          <TouchableOpacity 
-            style={homeStyle.btnHome} 
-            onPress={() => navigation.navigate('Discovery')}>
-            <Text style={homeStyle.btnHomeColor}>Obras</Text>
-          </TouchableOpacity>
+
+          <View style={homeStyle.btnContainer}>
+            <TouchableOpacity
+              style={homeStyle.btnHome}
+              onPress={() => navigation.navigate('Discovery')}>
+              <Text style={homeStyle.btnHomeColor}>Obras</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={homeStyle.btnHome}
+              onPress={() => navigation.navigate('Profile')}>
+              <Text style={homeStyle.btnHomeColor}>Ilustres</Text>
+            </TouchableOpacity>
+          </View>
+
         </View>
       </ImageBackground>
     </View>

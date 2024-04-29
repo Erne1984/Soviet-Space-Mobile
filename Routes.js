@@ -17,7 +17,7 @@ function MyTabs() {
         tabBarActiveTintColor: "#ffd64a",
         tabBarStyle:{
           borderTopWidth: 0,
-          marginBottom: 5,
+          marginBottom: 2,
           marginTop: 5
         },
         tabBarLabelStyle:{
@@ -26,7 +26,7 @@ function MyTabs() {
         }
       }}>
       <Tab.Screen 
-        name="Home" 
+        name="Início" 
         component={Home}
         options={{
           headerShown: true,
@@ -36,7 +36,7 @@ function MyTabs() {
         }}
       />
       <Tab.Screen 
-        name="Discovery" 
+        name="Obras" 
         component={Discovery} 
         options={{
           tabBarIcon: ({ color, size, focused }) => (
@@ -45,7 +45,7 @@ function MyTabs() {
         }}
       />
       <Tab.Screen 
-        name="Profile" 
+        name="Ilustres" 
         component={Profile} 
         options={{
           tabBarIcon: ({ color, size, focused }) => (
@@ -54,7 +54,7 @@ function MyTabs() {
         }}
       />
       <Tab.Screen 
-        name="About" 
+        name="Sobre" 
         component={About} 
         options={{
           tabBarIcon: ({ color, size, focused }) => (
@@ -63,7 +63,7 @@ function MyTabs() {
         }}
       />
       <Tab.Screen 
-        name="Settings" 
+        name="Configurações" 
         component={Settings} 
         options={{
           tabBarIcon: ({ color, size, focused }) => (

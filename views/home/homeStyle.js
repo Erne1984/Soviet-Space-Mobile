@@ -39,5 +39,11 @@ export default StyleSheet.create({
   btnHomeColor: {
     color: "#fff", 
     fontWeight: "bold"
+  },
+  btnContainer: {
+    textAlign: "center",
+    flexDirection: "row",
+    gap: 15,
+    marginTop: 10
   }
 });
