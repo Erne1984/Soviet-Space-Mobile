@@ -35,5 +35,9 @@ export default StyleSheet.create({
     padding: 10,
     borderWidth: 3,
     borderColor: "#ffd64a",
+  },
+  btnHomeColor: {
+    color: "#fff", 
+    fontWeight: "bold"
   }
 });
